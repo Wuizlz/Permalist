@@ -1,36 +1,49 @@
 html {
-  background-color: #e4e9fd;
-  background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e9fd 50%);
+  background-color: #f0f4fd;
+  background-image: linear-gradient(65deg, #7f8cff 50%, #f0f4fd 50%);
   min-height: 1000px;
-  font-family: "helvetica neue";
+  font-family: "Helvetica Neue", sans-serif;
+  animation: illuminate 12s ease-in-out infinite;
 }
+
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   min-height: 95vh;
+  margin: 0;
 }
+
 main {
   text-align: center;
   flex: 1 0 auto;
 }
+
 h1 {
   color: #fff;
   padding: 10px;
+  font-weight: 600;
 }
 
 .box {
   max-width: 400px;
   margin: 50px auto;
   background: white;
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  padding: 30px;
 }
 
 #heading {
-  background-color: #a683e3;
+  background-color: #7f8cff;
   text-align: center;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  font-size: 24px;
 }
+
 form.edit {
   display: flex;
 }
@@ -39,7 +52,8 @@ form.edit {
   min-height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
 }
 
 .item:last-child {
@@ -47,15 +61,15 @@ form.edit {
 }
 
 input[type="checkbox"] {
-  margin: 20px;
-  margin-left: 0;
+  margin: 0 15px;
+  accent-color: #6774ff;
 }
 
 p {
   margin: 0;
-  padding: 20px 0;
-  font-size: 20px;
-  color: #00204a;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #333;
 }
 
 form {
@@ -68,46 +82,64 @@ button.add {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #a683e3;
+  background-color: #6774ff;
   color: #fff;
   font-size: 30px;
   border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.add:hover {
+  background-color: #5a65e3;
 }
 
 button.edit {
-  margin-left: 0px;
+  margin-left: 0;
   margin-right: 20px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .icon {
   height: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+button.edit:hover .icon {
+  filter: none;
 }
 
 input[type="text"] {
   text-align: left;
   height: 60px;
-  top: 10px;
   border: none;
   background: transparent;
-  font-size: 20px;
-  font-weight: 200;
+  font-size: 18px;
+  font-weight: 400;
   width: 80%;
+  color: #333;
+  padding: 10px;
 }
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #a683e3;
+  box-shadow: inset 0 -3px 0 0 #7f8cff;
 }
 
 ::placeholder {
-  color: lightgray;
+  color: #b0b0b0;
   opacity: 1;
 }
 
 footer {
   flex: 0 0 auto;
-  color: white;
+  color: #666;
   text-align: center;
+  padding: 10px;
+  background-color: #f0f4fd;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
 }
